@@ -2,7 +2,7 @@ package lab_08;
 
 import java.security.SecureRandom;
 
-public class Panda extends Animals{
+public class Panda extends Animals {
 
     @Override
     public int getSpeed() {
