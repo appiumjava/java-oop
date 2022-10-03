@@ -1,30 +1,22 @@
 package lab_08;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class AnimalRacing {
-    public static void racing(Bear bear, Horse horse, Panda panda){
-        int bearSpeed = bear.getSpeed();
-        int horseSpeed = horse.getSpeed();
-        int pandaSpeed = panda.getSpeed();
-
-        System.out.println("Speed of " + bear.getAnimalName() + " is " + bearSpeed);
-        System.out.println("Speed of " + horse.getAnimalName() + " is " + horseSpeed);
-        System.out.println("Speed of " + panda.getAnimalName() + " is " + pandaSpeed);
-
-        List<Integer> animalSpeed = new ArrayList<>();
-        animalSpeed.add(bearSpeed);
-        animalSpeed.add(horseSpeed);
-        animalSpeed.add(pandaSpeed);
-        int max = Collections.max(animalSpeed);
-        if (bearSpeed == max) {
-            System.out.println("Winner is: " + bear.getAnimalName() + " with speed " + bearSpeed);
-        } else if (horseSpeed == max) {
-            System.out.println("Winner is: " + horse.getAnimalName() + " with speed " + horseSpeed);
-        } else {
-            System.out.println("Winner is: " + panda.getAnimalName() + " with speed " + pandaSpeed);
+    public static void racing(List<Animals> animalsList) {
+        Map<String, Integer> animalSpeedList = new HashMap<>();
+        for (Animals animals : animalsList) {
+            int animalSpeed = animals.getSpeed();
+            String animalName = animals.getAnimalName();
+            animalSpeedList.put(animalName, animalSpeed);
+            System.out.println("Speed of " + animalName + " is " + animalSpeed);
+        }
+        int max = Collections.max(animalSpeedList.values());
+        //Iterate each entry of hashmap
+        for (Map.Entry<String, Integer> entry : animalSpeedList.entrySet()) {
+            if (entry.getValue() == max) {
+                System.out.println("Winner is " + entry.getKey() + " with speed " + max);
+            }
         }
     }
 
@@ -32,7 +24,11 @@ public class AnimalRacing {
         Bear bear = new Bear();
         Horse horse = new Horse();
         Panda panda = new Panda();
-        racing(bear, horse, panda);
+
+        List<Animals> animalsList = Arrays.asList(bear, horse, panda);
+        AnimalRacing animalRacing = new AnimalRacing();
+        animalRacing.racing(animalsList);
     }
 }
+
 
