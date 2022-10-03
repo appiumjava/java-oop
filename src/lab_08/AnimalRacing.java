@@ -13,9 +13,9 @@ public class AnimalRacing {
         int horseSpeed = horse.getSpeed();
         int pandaSpeed = panda.getSpeed();
 
-        System.out.println("Speed of:" + bear.getAnimalName() + " is " + bearSpeed);
-        System.out.println("Speed of:" + horse.getAnimalName() + " is " + horseSpeed);
-        System.out.println("Speed of:" + panda.getAnimalName() + " is " + pandaSpeed);
+        System.out.println("Speed of " + bear.getAnimalName() + " is " + bearSpeed);
+        System.out.println("Speed of " + horse.getAnimalName() + " is " + horseSpeed);
+        System.out.println("Speed of " + panda.getAnimalName() + " is " + pandaSpeed);
 
         List<Integer> animalList = new ArrayList<>();
         animalList.add(bearSpeed);
