@@ -4,14 +4,9 @@ import java.security.SecureRandom;
 
 public class Horse extends Animals {
 
-    @Override
-    public int getSpeed() {
-        int randomSpeed = new SecureRandom().nextInt(50);
-        return randomSpeed;
-    }
+    static final int HORSE_MAX_SPEED = 120;
 
-    @Override
-    public String getAnimalName() {
-        return getClass().getSimpleName();
+    public Horse(String name) {
+        super(name, new SecureRandom().nextInt(HORSE_MAX_SPEED));
     }
 }

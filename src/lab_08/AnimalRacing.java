@@ -21,9 +21,9 @@ public class AnimalRacing {
     }
 
     public static void main(String[] args) {
-        Bear bear = new Bear();
-        Horse horse = new Horse();
-        Panda panda = new Panda();
+        Bear bear = new Bear("Bear");
+        Horse horse = new Horse("Horse");
+        Panda panda = new Panda("Panda");
 
         List<Animals> animalsList = Arrays.asList(bear, horse, panda);
         AnimalRacing animalRacing = new AnimalRacing();

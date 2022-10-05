@@ -4,14 +4,10 @@ import java.security.SecureRandom;
 
 public class Panda extends Animals {
 
-    @Override
-    public int getSpeed() {
-        int randomSpeed = new SecureRandom().nextInt(70);
-        return randomSpeed;
-    }
+    static final int PANDA_MAX_SPEED = 80;
 
-    @Override
-    public String getAnimalName() {
-        return getClass().getSimpleName();
+    public Panda(String name) {
+        super(name, new SecureRandom().nextInt(PANDA_MAX_SPEED));
     }
 }
+
