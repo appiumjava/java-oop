@@ -4,7 +4,8 @@ import java.security.SecureRandom;
 
 public class Dog extends Animals {
 
-    static final int DOG_MAX_SPEED = 120;
+    static final int DOG_MAX_SPEED = 80;
+    int speed = new SecureRandom().nextInt(DOG_MAX_SPEED);
     @Override
     public String getAnimalName() {
         return "Dog";
@@ -12,7 +13,7 @@ public class Dog extends Animals {
 
     @Override
     public int getSpeed() {
-        return new SecureRandom().nextInt(DOG_MAX_SPEED);
+        return speed;
     }
 }
 

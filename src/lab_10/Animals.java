@@ -1,5 +1,7 @@
 package lab_10;
 
+import java.security.SecureRandom;
+
 public abstract class Animals {
 
     private String animalName;
