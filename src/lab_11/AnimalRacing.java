@@ -22,13 +22,9 @@ public class AnimalRacing {
             animalSpeedList.put(moveAbleObjects.getClass().getSimpleName(), moveAbleObjects.speed());
             System.out.println("Speed of " + moveAbleObjects.getClass().getSimpleName() + " is " + moveAbleObjects.speed());
         }
-        int count = 0;
-        for (int i = 0; i < animalSpeedList.size(); i++) {
-            count++;
-        }
         if (animalSpeedList.isEmpty()) {
             System.out.println("No animals entered the race.");
-        } else if (count == 1) {
+        } else if (animalSpeedList.size() == 1) {
             System.out.println("Winner is " + animalSpeedList.keySet() + " with speed " + animalSpeedList.values());
         } else {
             int max = Collections.max(animalSpeedList.values());
